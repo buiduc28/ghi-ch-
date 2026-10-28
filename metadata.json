@@ -1,0 +1,6 @@
+{
+  "name": "Ghi Chú Nhanh",
+  "description": "Ứng dụng ghi chú offline đơn giản với phân loại thẻ màu và tìm kiếm nhanh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
