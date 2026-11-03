@@ -1,5 +1,5 @@
 {
-  "name": "Ghi Chú Nhanh",
+  "name": "Ghi chú",
   "description": "Ứng dụng ghi chú đơn giản với phân loại thẻ màu và tìm kiếm nhanh.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

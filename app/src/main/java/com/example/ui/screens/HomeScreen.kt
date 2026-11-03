@@ -97,7 +97,7 @@ fun HomeScreen(
                         )
                         Spacer(modifier = Modifier.size(10.dp))
                         Text(
-                            text = "Ghi Chú Nhanh",
+                            text = "Ghi Chú",
                             style = MaterialTheme.typography.titleLarge.copy(
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 20.sp
