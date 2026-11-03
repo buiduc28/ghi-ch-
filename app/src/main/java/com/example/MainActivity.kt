@@ -18,7 +18,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.ui.CurrentScreen
 import com.example.ui.NoteViewModel
 import com.example.ui.screens.HomeScreen
-import com.example.ui.screens.InfoDialog
 import com.example.ui.screens.NoteEditScreen
 import com.example.ui.screens.TrashScreen
 import com.example.ui.theme.MyApplicationTheme
@@ -62,8 +61,6 @@ fun NoteApp(viewModel: NoteViewModel) {
     val editIsChecklist by viewModel.editIsChecklist.collectAsStateWithLifecycle()
     val editUpdatedAt by viewModel.editUpdatedAt.collectAsStateWithLifecycle()
 
-    var showInfoDialog by remember { mutableStateOf(false) }
-
     Crossfade(targetState = currentScreen, label = "screen_crossfade") { screen ->
         when (screen) {
             is CurrentScreen.Home -> {
@@ -86,8 +83,7 @@ fun NoteApp(viewModel: NoteViewModel) {
                     onDeleteNote = { noteId -> viewModel.moveNoteToTrash(noteId) },
                     onDuplicateNote = { note -> viewModel.duplicateNote(note) },
                     onCreateNewNote = { viewModel.navigateToEdit(null) },
-                    onOpenTrash = { viewModel.navigateToTrash() },
-                    onOpenInfo = { showInfoDialog = true }
+                    onOpenTrash = { viewModel.navigateToTrash() }
                 )
             }
 
@@ -123,16 +119,6 @@ fun NoteApp(viewModel: NoteViewModel) {
                     onClearAllTrash = { viewModel.clearAllTrash() }
                 )
             }
-
-            is CurrentScreen.Info -> {
-                showInfoDialog = true
-            }
         }
-    }
-
-    if (showInfoDialog) {
-        InfoDialog(
-            onDismiss = { showInfoDialog = false }
-        )
     }
 }

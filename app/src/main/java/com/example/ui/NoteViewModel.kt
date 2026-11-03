@@ -32,7 +32,6 @@ sealed interface CurrentScreen {
     data object Home : CurrentScreen
     data class Edit(val noteId: Long?) : CurrentScreen
     data object Trash : CurrentScreen
-    data object Info : CurrentScreen
 }
 
 data class FilteredNotes(
@@ -203,10 +202,6 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
     fun navigateToTrash() {
         currentScreen.value = CurrentScreen.Trash
-    }
-
-    fun navigateToInfo() {
-        currentScreen.value = CurrentScreen.Info
     }
 
     fun setEditColor(colorId: Int) {

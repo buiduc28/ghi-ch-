@@ -19,10 +19,8 @@ import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.CloudOff
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.GridView
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.NoteAlt
 import androidx.compose.material.icons.filled.SearchOff
 import androidx.compose.material.icons.filled.Sort
@@ -81,7 +79,6 @@ fun HomeScreen(
     onDuplicateNote: (Note) -> Unit,
     onCreateNewNote: () -> Unit,
     onOpenTrash: () -> Unit,
-    onOpenInfo: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var showSortMenu by remember { mutableStateOf(false) }
@@ -98,31 +95,14 @@ fun HomeScreen(
                             tint = MaterialTheme.colorScheme.primary,
                             modifier = Modifier.size(26.dp)
                         )
-                        Spacer(modifier = Modifier.size(8.dp))
-                        Column {
-                            Text(
-                                text = "Ghi Chú Nhanh",
-                                style = MaterialTheme.typography.titleLarge.copy(
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 19.sp
-                                )
+                        Spacer(modifier = Modifier.size(10.dp))
+                        Text(
+                            text = "Ghi Chú Nhanh",
+                            style = MaterialTheme.typography.titleLarge.copy(
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 20.sp
                             )
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(
-                                    imageVector = Icons.Default.CloudOff,
-                                    contentDescription = "Offline 100%",
-                                    tint = MaterialTheme.colorScheme.secondary,
-                                    modifier = Modifier.size(11.dp)
-                                )
-                                Spacer(modifier = Modifier.size(3.dp))
-                                Text(
-                                    text = "Offline",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    color = MaterialTheme.colorScheme.secondary,
-                                    fontSize = 11.sp
-                                )
-                            }
-                        }
+                        )
                     }
                 },
                 actions = {
@@ -188,17 +168,6 @@ fun HomeScreen(
                                 contentDescription = "Thùng rác"
                             )
                         }
-                    }
-
-                    // App Info
-                    IconButton(
-                        onClick = onOpenInfo,
-                        modifier = Modifier.testTag("info_button")
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Info,
-                            contentDescription = "Thông tin ứng dụng"
-                        )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(

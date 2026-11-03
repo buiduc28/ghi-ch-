@@ -50,7 +50,7 @@ abstract class NoteDatabase : RoomDatabase() {
 
                 val note1 = Note(
                     title = "Chào mừng đến với Ghi Chú Nhanh! 📝",
-                    content = "Ứng dụng ghi chú offline 100% trên thiết bị của bạn, bảo mật và tiện lợi.\n\n✨ Các tính năng nổi bật:\n• Phân loại bằng 8 thẻ màu tươi sáng và danh mục trực quan\n• Tìm kiếm tức thì theo tiêu đề, nội dung hoặc thẻ màu\n• Ghim những ghi chú quan trọng lên đầu\n• Chuyển đổi giữa chế độ Lưới (Grid) và Danh sách (List)\n• Hỗ trợ danh sách việc cần làm (Checklist)\n• Thùng rác an toàn để khôi phục khi cần",
+                    content = "Ứng dụng ghi chú tiện lợi trên thiết bị của bạn, bảo mật và nhanh chóng.\n\n✨ Các tính năng nổi bật:\n• Phân loại bằng 8 thẻ màu tươi sáng và danh mục trực quan\n• Tìm kiếm tức thì theo tiêu đề, nội dung hoặc thẻ màu\n• Ghim những ghi chú quan trọng lên đầu\n• Chuyển đổi giữa chế độ Lưới (Grid) và Danh sách (List)\n• Hỗ trợ danh sách việc cần làm (Checklist)\n• Thùng rác an toàn để khôi phục khi cần",
                     colorTagId = 0,
                     category = "Chung",
                     isPinned = true,
